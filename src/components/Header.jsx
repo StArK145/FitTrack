@@ -24,7 +24,7 @@ function Header() {
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
           <div className="user-greeting">
             <h1 className="text-2xl md:text-3xl font-bold text-white mb-1">
-              Good Morning, {userProfile.name}!
+              Good Morning, {userProfile.name || userProfile.displayName}!
             </h1>
             <p className="text-gray-300 text-sm md:text-base">
               {dateTime.toLocaleDateString("en-US", {

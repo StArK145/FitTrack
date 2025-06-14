@@ -87,7 +87,7 @@ export default function AuthPage() {
       if (!userSnap.exists()) {
         await setDoc(userRef, {
           email: user.email,
-          name: user.name,
+          name: user.displayName,
           createdAt: new Date(),
         });
       }
@@ -96,7 +96,9 @@ export default function AuthPage() {
       StoreToken();
       navigate("/dashboard");
     } catch (err) {
-      setError("Google authentication failed: " + err.message);
+      setError("Google authentication failed: ");
+      console.log(err.message);
+      
     }
   };
 
